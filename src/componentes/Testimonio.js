@@ -1,6 +1,39 @@
 import React from 'react'
+import '../hojas-de-estilo/Testimonio.css'
  
+//de esta manera se crea un componente utilizando props, osea crear un componente totalmente reutilizable
+
+const Testimonio = (props)=>{
  
+    return (
+           <div className="contenedor-testimonio">
+               <img 
+                  className="imagen-testimonio" 
+                  src={require(`../imagenes/testimonio-${props.imagen}.jpg`)} 
+                  alt="foto de emma"
+               />
+                    <div className="contenedor-texto-testimonio" id="texto-testimonio">
+                        <p className="nombre-testimonio">
+                            <strong>{props.nombre}</strong>
+                        </p>
+                        <p className="cargo-testimonio">
+                            {props.clase} de <b>{props.setting}</b>
+                        </p>
+                        <p className="texto-testimonio">
+                            {props.descripcion}
+                        </p>
+                    </div>   
+           </div>
+       );
+   
+    }
+
+export default Testimonio;
+
+//esto es un ejemplo de un componente sin props, osea un componente basico no reutilizable 
+
+/*
+
 const Testimonio = ()=>{
  
  return (
@@ -11,7 +44,7 @@ const Testimonio = ()=>{
             alt="foto de emma"/>
 
             <div className="contenedor-texto-testimonio">
-                <p className="texto-testimonio">
+                <p className="nombre-testimonio">
                     Emma Bostian
                 </p>
                 <p className="cargo-testimonio">
@@ -26,5 +59,6 @@ const Testimonio = ()=>{
     );
 
  }
+
+*/
  
-export default Testimonio;
